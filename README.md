@@ -1,9 +1,6 @@
 LeapHoliday
 ===========
 
-A simple Processing application for controlling a Holiday by MooresCloud with a LeapMotion controller.
+A very simple Processing application for controlling a <a href="http://moorescloud.com/">Holiday</a> by <a href="https://github.com/moorescloud/">MooresCloud</a> with a LeapMotion controller.
 
-This application uses the Java library LeapMotionP5, also available on GitHub:
-https://github.com/mrzl/LeapMotionP5
-
-Eventually I'll extract this code out into a standard Java application.
+This application uses the Java library <a href="https://github.com/mrzl/LeapMotionP5">LeapMotionP5</a>.

@@ -1,10 +1,10 @@
-//Controlling a Holiday by Moorescloud with Leap Motion
+//Controlling a Holiday by Moorescloud with a Leap Motion
 import com.onformative.leap.LeapMotionP5;
 import com.leapmotion.leap.Finger;
 import com.leapmotion.leap.Hand;
-
 import java.io.*; 
 import java.net.*;
+
 DatagramSocket clientSocket;
 InetAddress ipAddress;
 PImage img;
@@ -14,6 +14,7 @@ PVector fingerPos;
 float xValue;
 float yValue;
 boolean pickup;
+
 void setup() {
   size(800, 800);
   strokeWeight(10);
@@ -35,7 +36,7 @@ void setup() {
   }
   try {
     clientSocket = new DatagramSocket();       
-    ipAddress = InetAddress.getByName("192.168.0.193");
+    ipAddress = InetAddress.getByName("192.168.0.193"); // insert your Holiday's IP address here
   } catch (IOException e) {} 
   leap = new LeapMotionP5(this);
   xValue = 0;
@@ -66,7 +67,6 @@ public void sendPacket() {
   DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, ipAddress, 9988);       
   try { 
     clientSocket.send(sendPacket);
-    System.out.println("sent");
   } catch (IOException e) {}
 }
 
