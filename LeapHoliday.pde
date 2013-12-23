@@ -58,11 +58,14 @@ void draw() {
 }
 
 public void sendPacket() {
-  byte[] sendData = new byte[160];   
+  byte[] sendData = new byte[160];
+  byte r = (byte) ((Float) red(get((int) abs(xValue), (int) abs(yValue)))).byteValue();
+  byte g = (byte) ((Float) green(get((int) abs(xValue), (int) abs(yValue)))).byteValue(); 
+  byte b = (byte) ((Float) blue(get((int) abs(xValue), (int) abs(yValue)))).byteValue(); 
   for (int i = 10; i < 158; i += 3) {               
-    sendData[i] = (byte) ((Float) red(get((int) abs(xValue), (int) abs(yValue)))).byteValue();
-    sendData[i + 1] = (byte) ((Float) green(get((int) abs(xValue), (int) abs(yValue)))).byteValue();
-    sendData[i + 2] = (byte) ((Float) blue(get((int) abs(xValue), (int) abs(yValue)))).byteValue();
+    sendData[i] = r;
+    sendData[i + 1] = g;
+    sendData[i + 2] = b;
   }
   DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, ipAddress, 9988);       
   try { 
