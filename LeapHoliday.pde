@@ -21,7 +21,7 @@ void setup() {
   colorMode(HSB);
   //we generate our own spectrum so we can
   //play around with it
-  img = loadImage("spectrum.tif");
+  img = loadImage("spectrum.jpg");
   if (img != null) {
     image(img, 0, 0);
   } else {
@@ -31,8 +31,8 @@ void setup() {
         point(width/2+cos(radians(i))*j, height/2+sin(radians(i))*j);
       }
     }
-    save("spectrum.tif"); //save an image because computing it is hard
-    img = loadImage("spectrum.tif");
+    save("spectrum.jpg"); //save an image because computing it is hard
+    img = loadImage("spectrum.jpg");
   }
   try {
     clientSocket = new DatagramSocket();       
