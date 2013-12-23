@@ -58,18 +58,18 @@ void draw() {
 }
 
 public void sendPacket() {
-  byte[] sendData = new byte[160];
+  byte[] data = new byte[160];
   byte r = (byte) ((Float) red(get((int) abs(xValue), (int) abs(yValue)))).byteValue();
   byte g = (byte) ((Float) green(get((int) abs(xValue), (int) abs(yValue)))).byteValue(); 
   byte b = (byte) ((Float) blue(get((int) abs(xValue), (int) abs(yValue)))).byteValue(); 
   for (int i = 10; i < 158; i += 3) {               
-    sendData[i] = r;
-    sendData[i + 1] = g;
-    sendData[i + 2] = b;
+    data[i] = r;
+    data[i + 1] = g;
+    data[i + 2] = b;
   }
-  DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, ipAddress, 9988);       
+  DatagramPacket packet = new DatagramPacket(data, data.length, ipAddress, 9988);       
   try { 
-    clientSocket.send(sendPacket);
+    clientSocket.send(packet);
   } catch (IOException e) {}
 }
 
